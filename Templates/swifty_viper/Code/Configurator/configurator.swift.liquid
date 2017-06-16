@@ -1,0 +1,40 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+class {{ module_info.name }}Configurator {
+
+    func configureModuleForViewInput() -> {{ module_info.name }}Presenter? {
+
+        let router = {{ module_info.name }}Router()
+
+        let presenter = {{ module_info.name }}Presenter()
+        presenter.router = router
+
+        let interactor = {{ module_info.name }}Interactor()
+        interactor.output = presenter
+
+        presenter.interactor = interactor
+
+        return presenter
+    }
+
+    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController, presenter: {{ module_info.name }}Presenter){
+
+        if let viewController = viewInput as? {{ module_info.name }}ViewController {
+            configure(viewController: viewController, presenter: presenter)
+        }
+    }
+
+    private func configure(viewController: {{ module_info.name }}ViewController, presenter: {{ module_info.name }}Presenter) {
+        presenter.view = viewController
+        viewController.output = presenter
+    }
+
+}

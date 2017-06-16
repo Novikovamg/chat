@@ -1,0 +1,36 @@
+### Headers settings
+company: newsystem
+
+### Xcode project settings
+project_name: OnMap
+xcodeproj_path: chat.xcodeproj
+prefix:
+
+### Code generation settings section
+# The main project target name
+project_target: chat
+
+# The file path for new modules
+project_file_path: /chat/Modules
+
+# The Xcode group path to new modules
+project_group_path: /chat/Modules
+
+### Tests generation settings section
+# The tests target name
+test_target: chatTests
+
+# The file path for new tests
+test_file_path: /chatTests
+
+# The Xcode group path to new tests
+test_group_path: /chatTests
+
+### Dependencies settings section
+podfile_path: Podfile
+
+### Templates
+templates:
+- {name: rviper_controller}
+- {name: mvvm_controller}
+- {name: swifty_viper}
